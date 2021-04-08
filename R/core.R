@@ -1,17 +1,6 @@
 #' @importFrom magrittr %>%
 add_semi_colon <- function(pd_nested) {
-  needs_semicolon <- which(
-    pd_nested$newlines > 0 &
-      pd_nested$token == "expr" &
-      rep(!styler:::is_function_dec(pd_nested), nrow(pd_nested)) &
-      rep(!styler:::is_cond_expr(pd_nested), nrow(pd_nested)) &
-      rep(!styler:::is_function_call(pd_nested), nrow(pd_nested)) &
-      rep(!styler:::is_while_expr(pd_nested), nrow(pd_nested)) &
-      rep(!pd_nested$token[styler:::next_non_comment(pd_nested, 0L)] == "'('", nrow(pd_nested))
-  )
-  if (any(pd_nested$pos_id == 1)) {
-    needs_semicolon <- c(needs_semicolon, nrow(pd_nested))
-  }
+  needs_semicolon <- find_semicolon_idx(pd_nested)
   if (!any(needs_semicolon)) {
     return(pd_nested)
   }
@@ -52,4 +41,32 @@ semicolon_style <- function() {
     # please choose a name that matches the definition in `?create_style_guide()`
     style_guide_version = "0.0.0.9000"
   )
+}
+
+find_semicolon_idx <- function(pd_nested) {
+  is_candidate <- pd_nested$newlines > 0 & pd_nested$token == "expr"
+  if (!any(is_candidate)) {
+    integer()
+  } else {
+    passes_advanced_test <- if (styler:::is_function_dec(pd_nested)) {
+      rep(FALSE, nrow(pd_nested))
+    } else if (styler:::is_function_dec(pd_nested)) {
+      rep(FALSE, nrow(pd_nested))
+    } else if (styler:::is_cond_expr(pd_nested)) {
+      rep(FALSE, nrow(pd_nested))
+    } else if (styler:::is_function_call(pd_nested)) {
+      rep(FALSE, nrow(pd_nested))
+    } else if (styler:::is_while_expr(pd_nested)) {
+      rep(FALSE, nrow(pd_nested))
+    } else if (pd_nested$token[styler:::next_non_comment(pd_nested, 0L)] == "'('") {
+      rep(FALSE, nrow(pd_nested))
+    } else {
+      rep(TRUE, nrow(pd_nested))
+    }
+    needs_semicolon <- which(is_candidate & passes_advanced_test)
+    if (any(pd_nested$pos_id == 1)) {
+      needs_semicolon <- c(needs_semicolon, nrow(pd_nested))
+    }
+    needs_semicolon
+  }
 }
