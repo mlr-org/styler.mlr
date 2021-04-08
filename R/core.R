@@ -48,17 +48,13 @@ find_semicolon_idx <- function(pd_nested) {
   if (!any(is_candidate)) {
     integer()
   } else {
-    passes_advanced_test <- if (styler:::is_function_dec(pd_nested)) {
-      rep(FALSE, nrow(pd_nested))
-    } else if (styler:::is_function_dec(pd_nested)) {
-      rep(FALSE, nrow(pd_nested))
-    } else if (styler:::is_cond_expr(pd_nested)) {
-      rep(FALSE, nrow(pd_nested))
-    } else if (styler:::is_function_call(pd_nested)) {
-      rep(FALSE, nrow(pd_nested))
-    } else if (styler:::is_while_expr(pd_nested)) {
-      rep(FALSE, nrow(pd_nested))
-    } else if (pd_nested$token[styler:::next_non_comment(pd_nested, 0L)] == "'('") {
+    passes_advanced_test <- if (
+      styler:::is_function_call(pd_nested) ||
+        styler:::is_function_dec(pd_nested) ||
+        styler:::is_cond_expr(pd_nested) ||
+        styler:::is_while_expr(pd_nested) ||
+        pd_nested$token[styler:::next_non_comment(pd_nested, 0L)] == "'('"
+    ) {
       rep(FALSE, nrow(pd_nested))
     } else {
       rep(TRUE, nrow(pd_nested))
