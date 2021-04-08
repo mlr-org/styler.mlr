@@ -28,18 +28,22 @@ styler::specify_reindention
 styler::specify_transformers_drop
 
 #' Like [styler::style_dir()], but `style` defaulting to `semicolon_style`
+#' @param ... Passed to [styler::style_dir()].
 #' @export
 style_dir <- purrr::partial(styler::style_dir, style = semicolon_style)
 
 #' Like [styler::style_file()], but `style` defaulting to `semicolon_style`
+#' @param ... Passed to [styler::style_file()].
 #' @export
 style_file <- purrr::partial(styler::style_file, style = semicolon_style)
 
 #' Like [styler::style_pkg()], but `style` defaulting to `semicolon_style`
+#' @param ... Passed to [styler::style_pkg()].
 #' @export
 style_pkg <- purrr::partial(styler::style_pkg, style = semicolon_style)
 
 #' Like [styler::style_text()], but `style` defaulting to `semicolon_style`
+#' @param ... Passed to [styler::style_text()].
 #' @export
 style_text <- purrr::partial(styler::style_text, style = semicolon_style)
 

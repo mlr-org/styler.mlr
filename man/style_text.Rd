@@ -6,6 +6,9 @@
 \usage{
 style_text(...)
 }
+\arguments{
+\item{...}{Passed to \code{\link[styler:style_text]{styler::style_text()}}.}
+}
 \description{
 Like \code{\link[styler:style_text]{styler::style_text()}}, but \code{style} defaulting to \code{semicolon_style}
 }

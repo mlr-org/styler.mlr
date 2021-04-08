@@ -6,6 +6,9 @@
 \usage{
 style_pkg(...)
 }
+\arguments{
+\item{...}{Passed to \code{\link[styler:style_pkg]{styler::style_pkg()}}.}
+}
 \description{
 Like \code{\link[styler:style_pkg]{styler::style_pkg()}}, but \code{style} defaulting to \code{semicolon_style}
 }

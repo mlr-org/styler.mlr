@@ -6,6 +6,9 @@
 \usage{
 style_dir(...)
 }
+\arguments{
+\item{...}{Passed to \code{\link[styler:style_dir]{styler::style_dir()}}.}
+}
 \description{
 Like \code{\link[styler:style_dir]{styler::style_dir()}}, but \code{style} defaulting to \code{semicolon_style}
 }
