@@ -18,6 +18,7 @@ repos:
         exclude: >
           (?x)^(
           data/.*|
+          \.github/workflows/.+|
           (.*/|)\.Rprofile|
           (.*/|)\.Renviron|
           (.*/|)renv\.lock|

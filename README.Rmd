@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/lorenzwalthert/semicoloner/workflows/R-CMD-check/badge.svg)](https://github.com/lorenzwalthert/semicoloner/actions)
 <!-- badges: end -->
 
 The goal of semicoloner is format code according to one rule: Put a semi-colon
