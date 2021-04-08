@@ -13,6 +13,7 @@ License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
 URL: https://github.com/lorenzwalthert/semicoloner
 BugReports: https://github.com/lorenzwalthert/semicoloner/issues
 Imports: 
+    magrittr,
     purrr,
     styler,
     tibble
