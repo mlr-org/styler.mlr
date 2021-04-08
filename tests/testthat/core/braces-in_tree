@@ -52,10 +52,10 @@ ROOT (token: short_text [lag_newlines/spaces] {pos_id})
      ¦--';': ; [0/1] {45}                              
      ¦--expr: 4 [0/2] {47}                             
      ¦   °--NUM_CONST: 4 [0/0] {46}                    
-     ¦--expr: x <-  [1/0] {48}                         
+     ¦--expr: x <-4 [1/0] {48}                         
      ¦   ¦--expr: x [0/1] {50}                         
      ¦   ¦   °--SYMBOL: x [0/0] {49}                   
-     ¦   ¦--LEFT_ASSIGN: <- [0/1] {51}                 
+     ¦   ¦--LEFT_ASSIGN: <- [0/0] {51}                 
      ¦   °--expr: 4 [0/0] {53}                         
      ¦       °--NUM_CONST: 4 [0/0] {52}                
      °--'}': } [1/0] {54}                              

@@ -16,6 +16,7 @@ repos:
           (?x)^(
           data/.*|
           \.github/workflows/.+|
+          tests/testthat/.*/.*-in_tree|
           (.*/|)\.Rprofile|
           (.*/|)\.Renviron|
           (.*/|)renv\.lock|
