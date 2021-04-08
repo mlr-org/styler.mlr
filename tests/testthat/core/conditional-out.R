@@ -1,5 +1,3 @@
-cond <- FALSE
-
 if (TRUE)
   3;
 

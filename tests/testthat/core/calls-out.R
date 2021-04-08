@@ -1,13 +1,13 @@
-c(x = 3);
+call(x = 3);
 
 
-c(x = 3
+call(x = 3
      );
 
 
-c(
+call(
   x = 3);
 
-c(
+call(
   x = 3
      );

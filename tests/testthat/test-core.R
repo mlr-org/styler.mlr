@@ -22,4 +22,9 @@ test_that("calls", {
     "loops",
     transformer = style_text
   ), NA)
+
+  expect_warning(styler:::test_collection("core",
+    "fun-dec",
+    transformer = style_text
+  ), NA)
 })
