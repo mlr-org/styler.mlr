@@ -4,7 +4,8 @@ add_semi_colon <- function(pd_nested) {
     pd_nested$newlines > 0 &
       pd_nested$token == "expr" &
       rep(!styler:::is_cond_expr(pd_nested), nrow(pd_nested)) &
-      rep(!styler:::is_function_call(pd_nested), nrow(pd_nested))
+      rep(!styler:::is_function_call(pd_nested), nrow(pd_nested)) &
+      rep(!pd_nested$token[styler:::next_non_comment(pd_nested, 0L)] == "'('", nrow(pd_nested))
   )
   if (any(pd_nested$pos_id == 1)) {
     needs_semicolon <- c(needs_semicolon, nrow(pd_nested))
@@ -34,6 +35,8 @@ add_semi_colon <- function(pd_nested) {
   return(pd_nested)
 }
 
+
+
 #' Style guide to put a semi colon at the end of (most) lines
 #'
 #' Otherwise, does not do anything.
@@ -43,7 +46,7 @@ semicolon_style <- function() {
     token = tibble::lst(add_semi_colon),
     use_raw_indention = TRUE,
     reindention = styler::tidyverse_reindention(),
-    style_guide_name = "semicolon_style",
+    style_guide_name = "semicoloner::semicolon_style@https://github.com/lorenzwalthert",
     # please choose a name that matches the definition in `?create_style_guide()`
     style_guide_version = "0.0.0.9000"
   )
