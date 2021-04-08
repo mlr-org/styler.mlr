@@ -10,16 +10,16 @@ Authors@R:
 Description: What the package does (one paragraph).
 License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
     license
+URL: https://github.com/lorenzwalthert/semicoloner
+BugReports: https://github.com/lorenzwalthert/semicoloner/issues
 Imports: 
     purrr,
     styler,
     tibble
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-URL: https://github.com/lorenzwalthert/semicoloner
-BugReports: https://github.com/lorenzwalthert/semicoloner/issues
-Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
