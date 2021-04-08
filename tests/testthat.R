@@ -1,4 +1,4 @@
 library(testthat)
-library(semicoloner)
+library(styler.mlr)
 
-test_check("semicoloner")
+test_check("styler.mlr")

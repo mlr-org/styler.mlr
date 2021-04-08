@@ -1,34 +1,34 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# semicoloner
+# styler.mlr
 
 <!-- badges: start -->
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/lorenzwalthert/semicoloner/workflows/R-CMD-check/badge.svg)](https://github.com/lorenzwalthert/semicoloner/actions)
+[![R-CMD-check](https://github.com/lorenzwalthert/styler.mlr/workflows/R-CMD-check/badge.svg)](https://github.com/lorenzwalthert/styler.mlr/actions)
 <!-- badges: end -->
 
-The goal of semicoloner is format code according to one rule: Put a
-semi-colon after every expression. It is an example for a custom
-[{styler}](https://styler.r-lib.org) style guide.
+The goal of {styler.mlr} is format code according to the [mlr
+style](https://github.com/mlr-org/mlr3/wiki/Style-Guide). It is an
+example for a custom [{styler}](https://styler.r-lib.org) style guide.
 
 ## Installation
 
-You can install the released version of semicoloner from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the released version of {styler.mlr} from
+[GitHub](https://github.com) with:
 
 ``` r
-remotes::install_github("lorenzwalthert/semicoloner")
+remotes::install_github("lorenzwalthert/styler.mlr")
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example of how to style code with it.
 
 ``` r
-library(semicoloner)
+library(styler.mlr)
 cache_deactivate()
 #> Deactivated cache.
 text <- 'communicate_warning <- function(changed, transformers) {
@@ -52,17 +52,21 @@ style_text(text)
 #>     !can_verify_roundtrip(transformers) &&
 #>     !getOption("styler.quiet", FALSE)
 #>   ) {
-#>     cat("Please review the changes carefully!", fill = TRUE);
-#>   };
-#> };
-#> a;
-#> b;
+#>     cat("Please review the changes carefully!", fill = TRUE)
+#>   }
+#> }
+#> a
+#> b
 #> c /
-#>   3;
-#> d + 3;
+#>   3
+#> d + 3
 ```
 
-## Principles
+To use in the addin, you can put something like this in your
+`.Rprofile`:
 
--   re-export all exported functions from {styler}, `purrr::partial()`
-    style guide arguments with third-party style guide.
+``` r
+if (grepl("mlr", getwd()) || grepl("paradox", getwd())) {
+  options(styler.addins_style_transformer = "styler.mlr::mlr_style()")
+}
+```
