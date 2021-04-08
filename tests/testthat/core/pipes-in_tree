@@ -1,0 +1,19 @@
+ROOT (token: short_text [lag_newlines/spaces] {pos_id})
+ ¦--expr: x %>% [0/0] {1}                              
+ ¦   ¦--expr: x [0/1] {3}                              
+ ¦   ¦   °--SYMBOL: x [0/0] {2}                        
+ ¦   ¦--SPECIAL-PIPE: %>% [0/1] {4}                    
+ ¦   °--expr: b() [0/0] {5}                            
+ ¦       ¦--expr: b [0/0] {7}                          
+ ¦       ¦   °--SYMBOL_FUNCTION_CALL: b [0/0] {6}      
+ ¦       ¦--'(': ( [0/0] {8}                           
+ ¦       °--')': ) [0/0] {9}                           
+ °--expr: x %>% [2/0] {10}                             
+     ¦--expr: x [0/1] {12}                             
+     ¦   °--SYMBOL: x [0/0] {11}                       
+     ¦--SPECIAL-PIPE: %>% [0/2] {13}                   
+     °--expr: b() [1/0] {14}                           
+         ¦--expr: b [0/0] {16}                         
+         ¦   °--SYMBOL_FUNCTION_CALL: b [0/0] {15}     
+         ¦--'(': ( [0/0] {17}                          
+         °--')': ) [0/0] {18}                          
