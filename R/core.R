@@ -6,6 +6,9 @@ add_semi_colon <- function(pd_nested) {
       rep(!styler:::is_cond_expr(pd_nested), nrow(pd_nested)) &
       rep(!styler:::is_function_call(pd_nested), nrow(pd_nested))
   )
+  if (any(pd_nested$pos_id == 1)) {
+    needs_semicolon <- c(needs_semicolon, nrow(pd_nested))
+  }
   if (!any(needs_semicolon)) {
     return(pd_nested)
   }
