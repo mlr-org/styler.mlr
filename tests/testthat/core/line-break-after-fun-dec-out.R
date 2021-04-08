@@ -15,7 +15,6 @@ add_space_around_op = function(pd_flat) {
 }
 
 add_space_around_op = function(pd_flat) {
-
   op_after = pd_flat$token %in% op_token
   op_after = pd_flat$token %in% op_token
   op_before = lead(op_after, default = FALSE)
