@@ -12,7 +12,7 @@ ROOT (token: short_text [lag_newlines/spaces] {pos_id})
  ¦   °--')': ) [0/0] {11}                              
  ¦--expr: (a =  [1/0] {12}                             
  ¦   ¦--'(': ( [0/0] {13}                              
- ¦   ¦--expr_or_assign_or_help: a = b [0/0] {14}       
+ ¦   ¦--equal_assign: a = b [0/0] {14}                 
  ¦   ¦   ¦--expr: a [0/1] {16}                         
  ¦   ¦   ¦   °--SYMBOL: a [0/0] {15}                   
  ¦   ¦   ¦--EQ_ASSIGN: = [0/1] {17}                    
@@ -23,7 +23,7 @@ ROOT (token: short_text [lag_newlines/spaces] {pos_id})
      ¦--'(': ( [0/0] {22}                              
      ¦--expr: (a =  [0/0] {23}                         
      ¦   ¦--'(': ( [0/0] {24}                          
-     ¦   ¦--expr_or_assign_or_help: a = 3 [0/0] {25}   
+     ¦   ¦--equal_assign: a = 3 [0/0] {25}             
      ¦   ¦   ¦--expr: a [0/1] {27}                     
      ¦   ¦   ¦   °--SYMBOL: a [0/0] {26}               
      ¦   ¦   ¦--EQ_ASSIGN: = [0/1] {28}                
