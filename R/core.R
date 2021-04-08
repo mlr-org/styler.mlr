@@ -165,15 +165,14 @@ mlr_style <- function(scope = "tokens",
   }
 
 
-  indention_modifier <- list()
 
   create_style_guide(
     # transformer functions
     initialize = default_style_guide_attributes,
     line_break = line_break_manipulators,
     space = space_manipulators,
+    indention = indention_manipulators,
     token = token_manipulators,
-    indention = indention_modifier,
     # transformer options
     use_raw_indention = use_raw_indention,
     reindention = reindention,
