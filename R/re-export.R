@@ -27,25 +27,25 @@ styler::specify_reindention
 #' @export
 styler::specify_transformers_drop
 
-#' Like [styler::style_dir()], but `style` defaulting to `semicolon_style`
+#' Like [styler::style_dir()], but `style` defaulting to `mlr_style`
 #' @param ... Passed to [styler::style_dir()].
 #' @export
-style_dir <- purrr::partial(styler::style_dir, style = semicolon_style)
+style_dir <- purrr::partial(styler::style_dir, style = mlr_style)
 
-#' Like [styler::style_file()], but `style` defaulting to `semicolon_style`
+#' Like [styler::style_file()], but `style` defaulting to `mlr_style`
 #' @param ... Passed to [styler::style_file()].
 #' @export
-style_file <- purrr::partial(styler::style_file, style = semicolon_style)
+style_file <- purrr::partial(styler::style_file, style = mlr_style)
 
-#' Like [styler::style_pkg()], but `style` defaulting to `semicolon_style`
+#' Like [styler::style_pkg()], but `style` defaulting to `mlr_style`
 #' @param ... Passed to [styler::style_pkg()].
 #' @export
-style_pkg <- purrr::partial(styler::style_pkg, style = semicolon_style)
+style_pkg <- purrr::partial(styler::style_pkg, style = mlr_style)
 
-#' Like [styler::style_text()], but `style` defaulting to `semicolon_style`
+#' Like [styler::style_text()], but `style` defaulting to `mlr_style`
 #' @param ... Passed to [styler::style_text()].
 #' @export
-style_text <- purrr::partial(styler::style_text, style = semicolon_style)
+style_text <- purrr::partial(styler::style_text, style = mlr_style)
 
 #' @export
 styler::tidyverse_math_token_spacing

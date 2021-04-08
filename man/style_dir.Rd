@@ -2,7 +2,7 @@
 % Please edit documentation in R/re-export.R
 \name{style_dir}
 \alias{style_dir}
-\title{Like \code{\link[styler:style_dir]{styler::style_dir()}}, but \code{style} defaulting to \code{semicolon_style}}
+\title{Like \code{\link[styler:style_dir]{styler::style_dir()}}, but \code{style} defaulting to \code{mlr_style}}
 \usage{
 style_dir(...)
 }
@@ -10,5 +10,5 @@ style_dir(...)
 \item{...}{Passed to \code{\link[styler:style_dir]{styler::style_dir()}}.}
 }
 \description{
-Like \code{\link[styler:style_dir]{styler::style_dir()}}, but \code{style} defaulting to \code{semicolon_style}
+Like \code{\link[styler:style_dir]{styler::style_dir()}}, but \code{style} defaulting to \code{mlr_style}
 }
