@@ -55,3 +55,9 @@ d + 3
 
 style_text(text)
 ```
+
+
+## Principles 
+
+* re-export all exported functions from {styler}, `purrr::partial()` style guide
+  arguments with third-party style guide.

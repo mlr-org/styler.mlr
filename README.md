@@ -58,5 +58,10 @@ style_text(text)
 #> b;
 #> c /
 #>   3;
-#> d + 3
+#> d + 3;
 ```
+
+## Principles
+
+-   re-export all exported functions from {styler}, `purrr::partial()`
+    style guide arguments with third-party style guide.
