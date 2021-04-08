@@ -21,4 +21,5 @@ f <- function(a,
   g()
   f()
   g()
+  k()
 }

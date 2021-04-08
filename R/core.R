@@ -28,12 +28,12 @@ version <- unlist(unname(read.dcf("DESCRIPTION")[, "Version"]))
 #' @importFrom purrr partial
 #' @export
 mlr_style <- function(scope = "tokens",
-                      strict = TRUE,
-                      indent_by = 2,
-                      start_comments_with_one_space = FALSE,
-                      reindention = tidyverse_reindention(),
-                      math_token_spacing = tidyverse_math_token_spacing(),
-                      min_lines_for_break = 10) {
+  strict = TRUE,
+  indent_by = 2,
+  start_comments_with_one_space = FALSE,
+  reindention = tidyverse_reindention(),
+  math_token_spacing = tidyverse_math_token_spacing(),
+  min_lines_for_break = 10) {
   args <- as.list(environment())
   scope <- styler:::scope_normalize(scope)
   indention_manipulators <- if ("indention" %in% scope) {
@@ -137,18 +137,16 @@ mlr_style <- function(scope = "tokens",
           except_token_after = "COMMENT",
           except_text_before = c("switch", "ifelse", "if_else")
         )
-      }
+      },
       #   # this breaks }) into separate lines, see https://github.com/r-lib/styler/issues/514#issue-443293104
       #   # add_line_break_before_round_closing_after_curly,
-
-      # should be last because it depends on other line breaks via n_lines()
-      # partial(styler:::set_line_break_after_fun_dec_header,
-      #   min_lines_for_break = min_lines_for_break,
-      #   # FIXME: this is needed to avoid linebreaks for `#nolint`. How to implement?
-      #   except_token_after = "COMMENT"
-      # )
       # add_line_break_after_pipe = if (strict) add_line_break_after_pipe,
       # set_linebreak_after_ggplot2_plus = if (strict) set_linebreak_after_ggplot2_plus
+      # should be last because it depends on other line breaks via n_lines()
+      set_line_break_after_fun_dec_header = partial(
+        set_line_break_after_fun_dec_header,
+        min_lines_for_break = min_lines_for_break
+      )
     )
   }
 
