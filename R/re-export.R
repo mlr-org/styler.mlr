@@ -30,22 +30,94 @@ styler::specify_transformers_drop
 #' Like [styler::style_dir()], but `style` defaulting to `mlr_style`
 #' @param ... Passed to [styler::style_dir()].
 #' @export
-style_dir <- purrr::partial(styler::style_dir, style = mlr_style)
+style_dir = function(path = ".",
+  ...,
+  style = mlr_style,
+  transformers = style(...),
+  filetype = c("R", "Rprofile"),
+  recursive = TRUE,
+  exclude_files = NULL,
+  exclude_dirs = c("packrat", "renv"),
+  include_roxygen_examples = TRUE,
+  base_indention = 0,
+  dry = "off") {
+
+  styler::style_dir(
+    path = path,
+    ...,
+    transformers = transformers,
+    filetype = filetype,
+    recursive = recursive,
+    exclude_files = exclude_files,
+    exclude_dirs = exclude_dirs,
+    include_roxygen_examples = include_roxygen_examples,
+    base_indention = base_indention,
+    dry = dry
+  )
+}
 
 #' Like [styler::style_file()], but `style` defaulting to `mlr_style`
 #' @param ... Passed to [styler::style_file()].
 #' @export
-style_file <- purrr::partial(styler::style_file, style = mlr_style)
+style_file = function(path,
+  ...,
+  style = mlr_style,
+  transformers = style(...),
+  include_roxygen_examples = TRUE,
+  base_indention = 0,
+  dry = "off") {
+  styler::style_file(
+    path, ...,
+    style = style, transformers = transformers,
+    include_roxygen_examples = include_roxygen_examples,
+    base_indention = base_indention,
+    dry = dry
+  )
+}
 
 #' Like [styler::style_pkg()], but `style` defaulting to `mlr_style`
 #' @param ... Passed to [styler::style_pkg()].
 #' @export
-style_pkg <- purrr::partial(styler::style_pkg, style = mlr_style)
+style_pkg = function(pkg = ".",
+  ...,
+  style = mlr_style,
+  transformers = style(...),
+  filetype = c("R", "Rprofile"),
+  exclude_files = "R/RcppExports.R",
+  exclude_dirs = c("packrat", "renv"),
+  include_roxygen_examples = TRUE,
+  base_indention = 0,
+  dry = "off") {
+
+  styler::style_pkg(
+    pkg = pkg,
+    ...,
+    style = style,
+    transformers = transformers,
+    filetype = filetype,
+    exclude_files = exclude_files,
+    exclude_dirs = exclude_dirs,
+    include_roxygen_examples = include_roxygen_examples,
+    base_indention = base_indention,
+    dry = dry
+  )
+}
 
 #' Like [styler::style_text()], but `style` defaulting to `mlr_style`
 #' @param ... Passed to [styler::style_text()].
 #' @export
-style_text <- purrr::partial(styler::style_text, style = mlr_style)
+style_text = function(text,
+  ...,
+  style = mlr_style,
+  transformers = style(...),
+  include_roxygen_examples = TRUE,
+  base_indention = 0) {
+  styler::style_text(text, ...,
+    style = style, transformers = transformers,
+    include_roxygen_examples = include_roxygen_examples,
+    base_indention = base_indention
+  )
+}
 
 #' @export
 styler::tidyverse_math_token_spacing

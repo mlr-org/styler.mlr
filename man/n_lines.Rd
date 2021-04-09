@@ -7,7 +7,7 @@
 n_lines(pd)
 }
 \arguments{
-\item{pd}{A parse table}
+\item{pd}{A parse table.}
 }
 \description{
 This can be useful if styling depends on the number of lines within an

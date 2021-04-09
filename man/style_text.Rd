@@ -4,7 +4,14 @@
 \alias{style_text}
 \title{Like \code{\link[styler:style_text]{styler::style_text()}}, but \code{style} defaulting to \code{mlr_style}}
 \usage{
-style_text(...)
+style_text(
+  text,
+  ...,
+  style = mlr_style,
+  transformers = style(...),
+  include_roxygen_examples = TRUE,
+  base_indention = 0
+)
 }
 \arguments{
 \item{...}{Passed to \code{\link[styler:style_text]{styler::style_text()}}.}

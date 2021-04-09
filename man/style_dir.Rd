@@ -4,7 +4,19 @@
 \alias{style_dir}
 \title{Like \code{\link[styler:style_dir]{styler::style_dir()}}, but \code{style} defaulting to \code{mlr_style}}
 \usage{
-style_dir(...)
+style_dir(
+  path = ".",
+  ...,
+  style = mlr_style,
+  transformers = style(...),
+  filetype = c("R", "Rprofile"),
+  recursive = TRUE,
+  exclude_files = NULL,
+  exclude_dirs = c("packrat", "renv"),
+  include_roxygen_examples = TRUE,
+  base_indention = 0,
+  dry = "off"
+)
 }
 \arguments{
 \item{...}{Passed to \code{\link[styler:style_dir]{styler::style_dir()}}.}

@@ -4,7 +4,15 @@
 \alias{style_file}
 \title{Like \code{\link[styler:style_file]{styler::style_file()}}, but \code{style} defaulting to \code{mlr_style}}
 \usage{
-style_file(...)
+style_file(
+  path,
+  ...,
+  style = mlr_style,
+  transformers = style(...),
+  include_roxygen_examples = TRUE,
+  base_indention = 0,
+  dry = "off"
+)
 }
 \arguments{
 \item{...}{Passed to \code{\link[styler:style_file]{styler::style_file()}}.}

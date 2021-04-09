@@ -4,7 +4,18 @@
 \alias{style_pkg}
 \title{Like \code{\link[styler:style_pkg]{styler::style_pkg()}}, but \code{style} defaulting to \code{mlr_style}}
 \usage{
-style_pkg(...)
+style_pkg(
+  pkg = ".",
+  ...,
+  style = mlr_style,
+  transformers = style(...),
+  filetype = c("R", "Rprofile"),
+  exclude_files = "R/RcppExports.R",
+  exclude_dirs = c("packrat", "renv"),
+  include_roxygen_examples = TRUE,
+  base_indention = 0,
+  dry = "off"
+)
 }
 \arguments{
 \item{...}{Passed to \code{\link[styler:style_pkg]{styler::style_pkg()}}.}
