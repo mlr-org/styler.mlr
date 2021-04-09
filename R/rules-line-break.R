@@ -9,7 +9,7 @@
 #' @keywords internal
 force_assignment_eq = function(pd) {
   if (styler:::is_function_call(pd) ||
-    pd$token[styler:::next_non_comment(pd, 0L)] == "'('"
+    isTRUE(pd$token[styler:::next_non_comment(pd, 0L)] == "'('")
   ) {
     return(pd)
   }

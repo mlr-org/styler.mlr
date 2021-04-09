@@ -183,6 +183,7 @@ mlr_style = function(scope = "tokens",
     use_raw_indention = use_raw_indention,
     reindention = reindention,
     style_guide_name = "styler.mlr::mlr_style@https://github.com/mlr-org/styler.mlr/",
-    style_guide_version = version
+    style_guide_version = version,
+    more_specs_style_guide = args
   )
 }
