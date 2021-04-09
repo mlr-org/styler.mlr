@@ -2,24 +2,31 @@ version = unlist(unname(read.dcf("DESCRIPTION")[, "Version"]))
 
 #' The mlr style
 #'
-#' Style code according to the mlr style guide.
+#' Style code according to the mlr style guide. For more details and docs, see
+#' the [styler::tidyverse_style()].
 #' @inheritParams styler::tidyverse_style
 #' @param min_lines_for_break The minimal number of lines required within a
 #'   function declaration to make styler adding a blank line between header and
 #'   body.
-#' @details The following options for `scope` are available.
+#' @details
+#' The following levels for `scope` are available:
 #'
 #' * "none": Performs no transformation at all.
 #' * "spaces": Manipulates spacing between token on the same line.
-#' * "indention": In addition to "spaces", this option also manipulates the
-#'   indention level.
-#' * "line_breaks": In addition to "indention", this option also manipulates
-#'   line breaks.
-#' * "tokens": In addition to "line_breaks", this option also manipulates
-#'   tokens.
+#' * "indention": Manipulates the indention, i.e. number of spaces at the
+#'   beginning of each line.
+#' * "line_breaks": Manipulates line breaks between tokens.
+#' * "tokens": manipulates tokens.
 #'
-#' As it becomes clear from this description, more invasive operations can only
-#' be performed if all less invasive operations are performed too.
+#' `scope` can be specified in two ways:
+#'
+#' - As a string: In this case all less invasive scope levels are implied, e.g.
+#'   "line_breaks" includes "indention", "spaces". This is brief and what most
+#'   users need.
+#' - As vector of class `AsIs`: Each level has to be listed explicitly by
+#'   wrapping one ore more levels of the scope in [I()]. This offers more
+#'   granular control at the expense of more verbosity.
+#'
 #' @family obtain transformers
 #' @family style_guides
 #' @examples
