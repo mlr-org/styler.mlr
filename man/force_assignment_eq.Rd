@@ -10,9 +10,4 @@ force_assignment_eq(pd)
 Because you can't determine from a nest with \verb{<-} what the context is,
 we need to do it from the parent.
 }
-\examples{
-# identical
-styler:::create_tree("x <- 2")
-styler:::create_tree("c(x <- 2)")
-}
 \keyword{internal}

@@ -28,7 +28,9 @@ styler::specify_reindention
 styler::specify_transformers_drop
 
 #' Like [styler::style_dir()], but `style` defaulting to `mlr_style`
-#' @param ... Passed to [styler::style_dir()].
+#'
+#' See [styler::style_dir()] for details, examples and more.
+#' @inheritParams styler::style_dir
 #' @export
 style_dir = function(path = ".",
   ...,
@@ -57,7 +59,9 @@ style_dir = function(path = ".",
 }
 
 #' Like [styler::style_file()], but `style` defaulting to `mlr_style`
-#' @param ... Passed to [styler::style_file()].
+#'
+#' See [styler::style_file()] for details, examples and more.
+#' @inheritParams styler::style_file
 #' @export
 style_file = function(path,
   ...,
@@ -76,7 +80,9 @@ style_file = function(path,
 }
 
 #' Like [styler::style_pkg()], but `style` defaulting to `mlr_style`
-#' @param ... Passed to [styler::style_pkg()].
+#'
+#' See [styler::style_pkg()] for details, examples and more.
+#' @inheritParams styler::style_pkg
 #' @export
 style_pkg = function(pkg = ".",
   ...,
@@ -103,8 +109,11 @@ style_pkg = function(pkg = ".",
   )
 }
 
+
 #' Like [styler::style_text()], but `style` defaulting to `mlr_style`
-#' @param ... Passed to [styler::style_text()].
+#'
+#' See [styler::style_text()] for details, examples and more.
+#' @inheritParams styler::style_text
 #' @export
 style_text = function(text,
   ...,
@@ -118,6 +127,7 @@ style_text = function(text,
     base_indention = base_indention
   )
 }
+
 
 #' @export
 styler::tidyverse_math_token_spacing
