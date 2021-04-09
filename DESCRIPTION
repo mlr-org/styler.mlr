@@ -1,5 +1,5 @@
 Package: styler.mlr
-Title: Third-party style guide for mlr
+Title: Third-party Style Guide For 'mlr'
 Version: 0.0.1
 Authors@R: 
     person(given = "Lorenz",
