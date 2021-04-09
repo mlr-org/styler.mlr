@@ -175,7 +175,7 @@ mlr_style = function(scope = "tokens",
     # transformer options
     use_raw_indention = use_raw_indention,
     reindention = reindention,
-    style_guide_name = "styler::mlr_style@https://github.com/pat-s/styler/tree/mlr-style", # TODO udpate this
+    style_guide_name = "styler.mlr::mlr_style@https://github.com/mlr-org/styler.mlr/",
     style_guide_version = version
   )
 }
