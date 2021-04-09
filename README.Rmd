@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/lorenzwalthert/styler.mlr/workflows/R-CMD-check/badge.svg)](https://github.com/lorenzwalthert/styler.mlr/actions)
+[![R-CMD-check](https://github.com/mlr-org/styler.mlr/workflows/R-CMD-check/badge.svg)](https://github.com/mlr-org/styler.mlr/actions)
 <!-- badges: end -->
 
 The goal of {styler.mlr} is format code according to the [mlr style](https://github.com/mlr-org/mlr3/wiki/Style-Guide). It is an example for a
@@ -28,7 +28,7 @@ custom [{styler}](https://styler.r-lib.org) style guide.
 You can install the released version of {styler.mlr} from [GitHub](https://github.com) with:
 
 ``` r
-remotes::install_github("lorenzwalthert/styler.mlr")
+remotes::install_github("mlr-org/styler.mlr")
 ```
 
 ## Example
@@ -38,7 +38,7 @@ This is a basic example of how to style code with it.
 ```{r example}
 library(styler.mlr)
 cache_deactivate()
-text <- "x <- 4
+text = "x <- 4
 y = 3
 a;
 "

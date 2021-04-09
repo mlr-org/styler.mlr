@@ -7,7 +7,7 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/lorenzwalthert/styler.mlr/workflows/R-CMD-check/badge.svg)](https://github.com/lorenzwalthert/styler.mlr/actions)
+[![R-CMD-check](https://github.com/mlr-org/styler.mlr/workflows/R-CMD-check/badge.svg)](https://github.com/mlr-org/styler.mlr/actions)
 <!-- badges: end -->
 
 The goal of {styler.mlr} is format code according to the [mlr
@@ -20,7 +20,7 @@ You can install the released version of {styler.mlr} from
 [GitHub](https://github.com) with:
 
 ``` r
-remotes::install_github("lorenzwalthert/styler.mlr")
+remotes::install_github("mlr-org/styler.mlr")
 ```
 
 ## Example
@@ -31,35 +31,15 @@ This is a basic example of how to style code with it.
 library(styler.mlr)
 cache_deactivate()
 #> Deactivated cache.
-text <- 'communicate_warning <- function(changed, transformers) {
-  if (any(changed, na.rm = TRUE) &&
-    !can_verify_roundtrip(transformers) &&
-    !getOption("styler.quiet", FALSE)
-  ) {
-    cat("Please review the changes carefully!", fill = TRUE)
-  }
-}
-a
-b
-c /
-  3
-d + 3
-'
+text = "x <- 4
+y = 3
+a;
+"
 
 style_text(text)
-#> communicate_warning <- function(changed, transformers) {
-#>   if (any(changed, na.rm = TRUE) &&
-#>     !can_verify_roundtrip(transformers) &&
-#>     !getOption("styler.quiet", FALSE)
-#>   ) {
-#>     cat("Please review the changes carefully!", fill = TRUE)
-#>   }
-#> }
+#> x = 4
+#> y = 3
 #> a
-#> b
-#> c /
-#>   3
-#> d + 3
 ```
 
 To use in the addin, you can put something like this in your
