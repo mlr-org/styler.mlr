@@ -1,12 +1,12 @@
 
-f <- function(a,
+f = function(a,
   b,
   c) { # #nolint
   just(one)
 }
 
 
-f <- function(a,
+f = function(a,
   b,
   c) # #nolint
 {

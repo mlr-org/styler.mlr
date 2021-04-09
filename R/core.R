@@ -1,4 +1,4 @@
-version <- unlist(unname(read.dcf("DESCRIPTION")[, "Version"]))
+version = unlist(unname(read.dcf("DESCRIPTION")[, "Version"]))
 
 #' The mlr style
 #'
@@ -27,16 +27,17 @@ version <- unlist(unname(read.dcf("DESCRIPTION")[, "Version"]))
 #' style_text("call( 1)", transformers = mlr_style(strict = TRUE))
 #' @importFrom purrr partial
 #' @export
-mlr_style <- function(scope = "tokens",
+mlr_style = function(scope = "tokens",
   strict = TRUE,
   indent_by = 2,
   start_comments_with_one_space = FALSE,
   reindention = tidyverse_reindention(),
   math_token_spacing = tidyverse_math_token_spacing(),
   min_lines_for_break = 10) {
-  args <- as.list(environment())
-  scope <- styler:::scope_normalize(scope)
-  indention_manipulators <- if ("indention" %in% scope) {
+
+  args = as.list(environment())
+  scope = styler:::scope_normalize(scope)
+  indention_manipulators = if ("indention" %in% scope) {
     list(
       indent_braces = partial(styler:::indent_braces, indent_by = indent_by),
       indent_op = partial(styler:::indent_op, indent_by = indent_by),
@@ -46,7 +47,7 @@ mlr_style <- function(scope = "tokens",
       )
     )
   }
-  space_manipulators <- if ("spaces" %in% scope) {
+  space_manipulators = if ("spaces" %in% scope) {
     list(
       remove_space_before_closing_paren = styler:::remove_space_before_closing_paren,
       remove_space_before_opening_paren = if (strict) {
@@ -96,9 +97,9 @@ mlr_style <- function(scope = "tokens",
     )
   }
 
-  use_raw_indention <- !("indention" %in% scope)
+  use_raw_indention = !("indention" %in% scope)
 
-  line_break_manipulators <- if ("line_breaks" %in% scope) {
+  line_break_manipulators = if ("line_breaks" %in% scope) {
     list(
       # set_line_break_around_comma_and_or = styler:::set_line_break_around_comma_and_or,
       # set_line_break_after_assignment = set_line_break_after_assignment,
@@ -150,7 +151,7 @@ mlr_style <- function(scope = "tokens",
     )
   }
 
-  token_manipulators <- if ("tokens" %in% scope) {
+  token_manipulators = if ("tokens" %in% scope) {
     list(
       fix_quotes = styler:::fix_quotes,
       force_assignment_eq = force_assignment_eq,
