@@ -111,8 +111,6 @@ mlr_style = function(scope = "tokens",
       # set_line_break_around_comma_and_or = styler:::set_line_break_around_comma_and_or,
       # set_line_break_after_assignment = set_line_break_after_assignment,
       # set_line_break_before_curly_opening = set_line_break_before_curly_opening,
-      remove_line_break_before_round_closing_after_curly =
-        if (strict) styler:::remove_line_break_before_round_closing_after_curly,
       style_line_break_around_curly = partial(
         styler:::style_line_break_around_curly,
         strict = strict
@@ -139,8 +137,8 @@ mlr_style = function(scope = "tokens",
       #   strict = strict
       # ),
       add_line_break_after_pipe = styler:::add_line_break_after_pipe,
-      #   # this breaks }) into separate lines, see https://github.com/r-lib/styler/issues/514#issue-443293104
-      #   # add_line_break_before_round_closing_after_curly,
+      # this breaks }) into separate lines, see https://github.com/r-lib/styler/issues/514#issue-443293104
+      add_line_break_before_round_closing_after_curly,
       # add_line_break_after_pipe = if (strict) add_line_break_after_pipe,
       # set_linebreak_after_ggplot2_plus = if (strict) set_linebreak_after_ggplot2_plus
       # should be last because it depends on other line breaks via n_lines()
