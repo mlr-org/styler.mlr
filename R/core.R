@@ -139,13 +139,6 @@ mlr_style = function(scope = "tokens",
         strict = strict
       ),
       add_line_break_after_pipe = styler:::add_line_break_after_pipe,
-      set_line_break_after_opening_if_call_is_multi_line = if (strict) {
-        partial(
-          styler:::set_line_break_after_opening_if_call_is_multi_line,
-          except_token_after = "COMMENT",
-          except_text_before = c("switch", "ifelse", "if_else")
-        )
-      },
       #   # this breaks }) into separate lines, see https://github.com/r-lib/styler/issues/514#issue-443293104
       #   # add_line_break_before_round_closing_after_curly,
       # add_line_break_after_pipe = if (strict) add_line_break_after_pipe,
