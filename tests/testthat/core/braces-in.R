@@ -11,3 +11,7 @@ list(
     }
     )
 )
+
+test_that("DataBackendCbind", {
+  # stuff
+})

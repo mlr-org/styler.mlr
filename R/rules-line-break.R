@@ -57,6 +57,6 @@ newlines_count_top_nest = function(pd) {
 # if ) follows on }, add line break
 add_line_break_before_round_closing_after_curly = function(pd) {
   round_after_curly = pd$token == "')'" & (pd$token_before == "'}'")
-  pd$lag_newlines[round_after_curly] = 1L
+  pd$lag_newlines[round_after_curly] = min(pd$lag_newlines[round_after_curly], 1L)
   pd
 }
