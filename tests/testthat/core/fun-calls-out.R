@@ -17,3 +17,13 @@ call(x = 33,
 
 call(x = 33, "fjk", "dfj", "fhidafd",
   n = 323, p - 32)
+
+
+xx(
+
+  bli = 2,
+
+  # comment
+
+  "out"
+)

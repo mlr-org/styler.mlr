@@ -134,10 +134,10 @@ mlr_style = function(scope = "tokens",
       #     force_text_before = c("switch") # force line break after first token
       #   )
       # },
-      remove_line_break_in_fun_call = purrr::partial(
-        styler:::remove_line_break_in_fun_call,
-        strict = strict
-      ),
+      # remove_line_break_in_fun_call = purrr::partial(
+      #   styler:::remove_line_break_in_fun_call,
+      #   strict = strict
+      # ),
       add_line_break_after_pipe = styler:::add_line_break_after_pipe,
       #   # this breaks }) into separate lines, see https://github.com/r-lib/styler/issues/514#issue-443293104
       #   # add_line_break_before_round_closing_after_curly,
