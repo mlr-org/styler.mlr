@@ -11,7 +11,7 @@ test_that("line break for multi-line function declaration", {
     transformer = style_text,
   ), NA)
 
-  expect_warning(styler:::test_collection("core", "fun-decs-comments",
+  expect_warning(styler:::test_collection("core", "fun-decs",
     transformer = style_text,
   ), NA)
 

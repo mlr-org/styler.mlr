@@ -5,9 +5,6 @@ version = unlist(unname(read.dcf("DESCRIPTION")[, "Version"]))
 #' Style code according to the mlr style guide. For more details and docs, see
 #' the [styler::tidyverse_style()].
 #' @inheritParams styler::tidyverse_style
-#' @param min_lines_for_break The minimal number of lines required within a
-#'   function declaration to make styler adding a blank line between header and
-#'   body.
 #' @details
 #' The following levels for `scope` are available:
 #'
@@ -39,8 +36,8 @@ mlr_style = function(scope = "tokens",
   indent_by = 2,
   start_comments_with_one_space = FALSE,
   reindention = tidyverse_reindention(),
-  math_token_spacing = tidyverse_math_token_spacing(),
-  min_lines_for_break = 10) {
+  math_token_spacing = tidyverse_math_token_spacing()
+) {
 
   args = as.list(environment())
   scope = styler:::scope_normalize(scope)
@@ -112,7 +109,7 @@ mlr_style = function(scope = "tokens",
       # set_line_break_after_assignment = set_line_break_after_assignment,
       # set_line_break_before_curly_opening = set_line_break_before_curly_opening,
       style_line_break_around_curly = partial(
-        styler:::style_line_break_around_curly,
+        style_line_break_around_curly,
         strict = strict
       ),
       # remove_line_breaks_in_fun_dec =
@@ -138,14 +135,9 @@ mlr_style = function(scope = "tokens",
       # ),
       add_line_break_after_pipe = styler:::add_line_break_after_pipe,
       # this breaks }) into separate lines, see https://github.com/r-lib/styler/issues/514#issue-443293104
-      add_line_break_before_round_closing_after_curly,
+      add_line_break_before_round_closing_after_curly
       # add_line_break_after_pipe = if (strict) add_line_break_after_pipe,
       # set_linebreak_after_ggplot2_plus = if (strict) set_linebreak_after_ggplot2_plus
-      # should be last because it depends on other line breaks via n_lines()
-      set_line_break_after_fun_dec_header = partial(
-        set_line_break_after_fun_dec_header,
-        min_lines_for_break = min_lines_for_break
-      )
     )
   }
 
