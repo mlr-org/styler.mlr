@@ -1,6 +1,6 @@
 Package: styler.mlr
 Title: Third-party Style Guide For 'mlr'
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: 
     person(given = "Lorenz",
            family = "Walthert",

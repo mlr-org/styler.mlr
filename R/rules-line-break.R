@@ -50,7 +50,7 @@ style_line_break_around_curly = function(strict, pd) {
     closing_before = pd$token == "'}'"
     opening_before = (pd$token == "'{'") & (pd$token_after != "COMMENT")
     to_break = styler:::lag(opening_before, default = FALSE) | closing_before
-    pd$lag_newlines[to_break] = pmin(2L, pd$lag_newlines[to_break])
+    pd$lag_newlines[to_break] = pmin(2L, pmax(1L, pd$lag_newlines[to_break]))
   }
   pd
 }

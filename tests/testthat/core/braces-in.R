@@ -15,3 +15,6 @@ list(
 test_that("DataBackendCbind", {
   # stuff
 })
+
+
+function() { 1 }
