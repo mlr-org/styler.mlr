@@ -2,8 +2,7 @@ call(x,
   y = 2)
 
 
-call(x = 33, "fjk"
-)
+call(x = 33, "fjk")
 
 
 call(

@@ -1,7 +1,8 @@
 list(
   x = list(
     f <- function() {
-    })
+    }
+  )
 )
 
 

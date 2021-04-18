@@ -115,12 +115,12 @@ mlr_style = function(scope = "tokens",
       # remove_line_breaks_in_fun_dec =
       #   if (strict) remove_line_breaks_in_fun_dec,
       # set_line_break_around_curly_curly = styler:::set_line_break_around_curly_curly,
-      # set_line_break_before_closing_call = if (strict) {
-      #   partial(
-      #     styler:::set_line_break_before_closing_call,
-      #     except_token_before = "COMMENT"
-      #   )
-      # },
+      set_line_break_before_closing_call = if (strict) {
+        partial(
+          set_line_break_before_closing_call,
+          except_token_before = "COMMENT"
+        )
+      },
       # set_line_break_after_opening_if_call_is_multi_line = if (strict) {
       #   partial(
       #     styler:::set_line_break_after_opening_if_call_is_multi_line,
