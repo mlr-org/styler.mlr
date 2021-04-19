@@ -2,14 +2,14 @@
 % Please edit documentation in R/rules-line-break.R
 \name{set_line_break_before_closing_call}
 \alias{set_line_break_before_closing_call}
-\title{Like \code{\link[styler:::set_line_break_before_closing_call]{styler::::set_line_break_before_closing_call()}} but only adding a line
+\title{Like \code{styler:::set_line_break_before_closing_call()} but only adding a line
 break if multi-line function call \strong{and} the token before the closing brace
 is a curly brace (otherwise indention does not work nicely).}
 \usage{
 set_line_break_before_closing_call(pd, except_token_before)
 }
 \description{
-Like \code{\link[styler:::set_line_break_before_closing_call]{styler::::set_line_break_before_closing_call()}} but only adding a line
+Like \code{styler:::set_line_break_before_closing_call()} but only adding a line
 break if multi-line function call \strong{and} the token before the closing brace
 is a curly brace (otherwise indention does not work nicely).
 }

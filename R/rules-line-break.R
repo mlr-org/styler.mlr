@@ -55,7 +55,7 @@ style_line_break_around_curly = function(strict, pd) {
   pd
 }
 
-#' Like [styler:::set_line_break_before_closing_call()] but only adding a line
+#' Like `styler:::set_line_break_before_closing_call()` but only adding a line
 #' break if multi-line function call **and** the token before the closing brace
 #' is a curly brace (otherwise indention does not work nicely).
 #' @keywords internal
