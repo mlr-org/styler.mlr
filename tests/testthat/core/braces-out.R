@@ -1,7 +1,8 @@
 list(
   x = list(
     f <- function() {
-    })
+    }
+  )
 )
 
 
@@ -15,3 +16,8 @@ list(
 test_that("DataBackendCbind", {
   # stuff
 })
+
+
+function() {
+  1
+}

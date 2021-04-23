@@ -10,7 +10,6 @@ f = function(a,
   b,
   c) # #nolint
 {
-
   f()
   g()
   f()
@@ -22,4 +21,5 @@ f = function(a,
   f()
   g()
   k()
+
 }

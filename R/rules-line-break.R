@@ -25,38 +25,54 @@ force_assignment_eq = function(pd) {
   pd
 }
 
-set_line_break_after_fun_dec_header = function(pd, min_lines_for_break) {
-  if (any(pd$token == "FUNCTION") &&
-    pd$child[[nrow(pd)]]$token[1] == "'{'"
-  ) {
-    pos = styler:::next_non_comment(pd$child[[nrow(pd)]], 1)
-    pd$child[[nrow(pd)]]$lag_newlines[pos] = ifelse(
-      n_lines(pd) > min_lines_for_break,
-      2L,
-      1L
-    )
-  }
-  pd
-}
-
-#' Count the number of line breaks in a parse table and all its children
-#'
-#' This can be useful if styling depends on the number of lines within an
-#' expression.
-#' @param pd A parse table.
-#' @keywords internal
-n_lines = function(pd) {
-  sum(purrr::map_int(pd$child, newlines_count_top_nest)) +
-    newlines_count_top_nest(pd)
-}
-
-newlines_count_top_nest = function(pd) {
-  sum(pd$lag_newlines)
-}
+# set_line_break_after_fun_dec_header = function(pd) {
+#   if (any(pd$token == "FUNCTION") &&
+#     pd$child[[nrow(pd)]]$token[1] == "'{'"
+#   ) {
+#     pos = styler:::next_non_comment(pd$child[[nrow(pd)]], 1)
+#     pd$child[[nrow(pd)]]$lag_newlines[pos] = min(
+#       2L,
+#       pd$child[[nrow(pd)]]$lag_newlines[pos]
+#     )
+#   }
+#   pd
+# }
 
 # if ) follows on }, add line break
 add_line_break_before_round_closing_after_curly = function(pd) {
   round_after_curly = pd$token == "')'" & (pd$token_before == "'}'")
   pd$lag_newlines[round_after_curly] = min(pd$lag_newlines[round_after_curly], 1L)
+  pd
+}
+
+style_line_break_around_curly = function(strict, pd) {
+  if (styler:::is_curly_expr(pd) && nrow(pd) > 2) {
+    closing_before = pd$token == "'}'"
+    opening_before = (pd$token == "'{'") & (pd$token_after != "COMMENT")
+    to_break = styler:::lag(opening_before, default = FALSE) | closing_before
+    pd$lag_newlines[to_break] = pmin(2L, pmax(1L, pd$lag_newlines[to_break]))
+  }
+  pd
+}
+
+#' Like `styler:::set_line_break_before_closing_call()` but only adding a line
+#' break if multi-line function call **and** the token before the closing brace
+#' is a curly brace (otherwise indention does not work nicely).
+#' @keywords internal
+set_line_break_before_closing_call = function(pd, except_token_before) {
+  if (!styler:::is_function_call(pd) && !styler:::is_subset_expr(pd)) {
+    return(pd)
+  }
+
+  npd = nrow(pd)
+  is_multi_line = any(pd$lag_newlines[rlang::seq2(3L, npd - 1L)] > 0)
+  if (!is_multi_line) {
+    exception = which(pd$token_before %in% except_token_before)
+    pd$lag_newlines[setdiff(npd, exception)] = 0L
+    return(pd)
+  } else if (pd$token_before[npd] == "'}'") {
+    pd$lag_newlines[npd] = 1L
+  }
+
   pd
 }

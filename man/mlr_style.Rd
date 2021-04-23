@@ -10,8 +10,7 @@ mlr_style(
   indent_by = 2,
   start_comments_with_one_space = FALSE,
   reindention = tidyverse_reindention(),
-  math_token_spacing = tidyverse_math_token_spacing(),
-  min_lines_for_break = 10
+  math_token_spacing = tidyverse_math_token_spacing()
 )
 }
 \arguments{
@@ -38,10 +37,6 @@ conveniently constructed using \code{\link[styler:reindention]{specify_reindenti
 
 \item{math_token_spacing}{A list of parameters that define spacing around
 math token, conveniently constructed using \code{\link[styler:math_token_spacing]{specify_math_token_spacing()}}.}
-
-\item{min_lines_for_break}{The minimal number of lines required within a
-function declaration to make styler adding a blank line between header and
-body.}
 }
 \description{
 Style code according to the mlr style guide. For more details and docs, see
