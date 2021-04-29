@@ -12,7 +12,7 @@ License: MIT + file LICENSE
 Imports: 
     magrittr,
     purrr,
-    styler (>= 1.4.1.9001),
+    styler (>= 1.4.1.9002),
     tibble
 Suggests: 
     fs,
