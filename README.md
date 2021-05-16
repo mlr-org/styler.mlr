@@ -42,8 +42,8 @@ style_text(text)
 #> a
 ```
 
-To use in the addin, you can put something like this in your
-`.Rprofile`:
+To use the `mlr-style` in the RStudio addin, one can put something like
+this into `.Rprofile`:
 
 ``` r
 if (grepl("mlr", getwd()) || grepl("paradox", getwd())) {
