@@ -147,7 +147,6 @@ mlr_style = function(scope = "tokens",
       force_assignment_eq = force_assignment_eq,
       resolve_semicolon = styler:::resolve_semicolon,
       add_brackets_in_pipe = styler:::add_brackets_in_pipe,
-      remove_terminal_token_before_and_after = styler:::remove_terminal_token_before_and_after,
       wrap_if_else_while_for_fun_multi_line_in_curly =
         if (strict) styler:::wrap_if_else_while_for_fun_multi_line_in_curly
     )
