@@ -2,10 +2,7 @@ Package: styler.mlr
 Title: Third-party Style Guide For 'mlr'
 Version: 0.0.4.9000
 Authors@R: 
-    person(given = "Lorenz",
-           family = "Walthert",
-           role = c("aut", "cre"),
-           email = "lorenz.walthert@icloud.com")
+    person("Lorenz", "Walthert", , "lorenz.walthert@icloud.com", role = c("aut", "cre"))
 Description: styles code according to the 'mlr style guide' using
     'styler'.
 License: MIT + file LICENSE
