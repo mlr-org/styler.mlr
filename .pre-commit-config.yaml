@@ -12,6 +12,8 @@ repos:
     # -   id: codemeta-description-updated
     -   id: use-tidy-description
     -   id: spell-check
+        additional_dependencies:
+        -    mlr-org/styler.mlr
         exclude: >
           (?x)^(
           data/.*|
