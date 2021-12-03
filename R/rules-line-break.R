@@ -21,7 +21,8 @@ force_assignment_eq = function(pd) {
         pd_child$text[to_replace] = "="
       }
       pd_child
-    })
+    }
+  )
   pd
 }
 
