@@ -6,14 +6,14 @@ repos:
     hooks:
     -   id: style-files
         args: [--style_pkg=styler.mlr, --style_fun=mlr_style]
+        additional_dependencies:
+        -    mlr-org/styler.mlr
         exclude: 'tests/testthat/.*/.*\.R'
     -   id: roxygenize
     # codemeta must be above use-tidy-description when both are used
     # -   id: codemeta-description-updated
     -   id: use-tidy-description
     -   id: spell-check
-        additional_dependencies:
-        -    mlr-org/styler.mlr
         exclude: >
           (?x)^(
           data/.*|
