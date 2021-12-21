@@ -154,6 +154,47 @@ mlr_style = function(scope = "tokens",
 
 
 
+  transformers_drop = specify_transformers_drop(
+    spaces = list(
+      add_space_after_for_if_while = c("IF", "WHILE", "FOR"),
+      # remove_space_before_comma = "','",
+      set_space_between_eq_sub_and_comma = "EQ_SUB",
+      style_space_around_math_token = c(
+        math_token_spacing$zero,
+        math_token_spacing$one
+      ),
+      style_space_around_tilde = "'~'",
+      # remove_space_after_opening_paren = c("'('", "'['", "LBB"),
+      remove_space_after_excl = "'!'",
+      set_space_after_bang_bang = "'!'",
+      remove_space_before_dollar = "'$'",
+      remove_space_after_fun_dec = "FUNCTION",
+      remove_space_around_colons = c("':'", "NS_GET_INT", "NS_GET"),
+      start_comments_with_space = "COMMENT",
+      remove_space_after_unary_pm_nested = c("'+'", "'-'"),
+      spacing_before_comments = "COMMENT"
+    ),
+    indention = list(),
+    line_breaks = list(
+      style_line_break_around_curly = "'{'",
+      add_line_break_after_pipe = c("SPECIAL-PIPE", "PIPE")
+    ),
+    tokens = list(
+      resolve_semicolon = "';'",
+      add_brackets_in_pipe = c("SPECIAL-PIPE", "PIPE"),
+      # before 3.6, these assignments are not wrapped into top level expression
+      # and `text` supplied to transformers_drop() is "", so it appears to not
+      # contain EQ_ASSIGN, and the transformer is falsely removed.
+      # compute_parse_data_nested / text_to_flat_pd ('a = 4')
+      force_assignment_op = "LEFT_ASSIGN",
+      wrap_if_else_while_for_fun_multi_line_in_curly = c("IF", "WHILE", "FOR", "FUNCTION")
+    )
+  )
+
+  if (getRversion() < 3.6) {
+    transformers_drop$token$force_assignment_op = NULL
+  }
+
   create_style_guide(
     # transformer functions
     initialize = default_style_guide_attributes,
@@ -166,6 +207,7 @@ mlr_style = function(scope = "tokens",
     reindention = reindention,
     style_guide_name = "styler.mlr::mlr_style@https://github.com/mlr-org/styler.mlr/",
     style_guide_version = version,
-    more_specs_style_guide = args
+    more_specs_style_guide = args,
+    transformers_drop = transformers_drop
   )
 }
