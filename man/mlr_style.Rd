@@ -33,10 +33,10 @@ operators such as '('.}
 with only one space (see \code{\link[styler:start_comments_with_space]{start_comments_with_space()}}).}
 
 \item{reindention}{A list of parameters for regex re-indention, most
-conveniently constructed using \code{\link[styler:reindention]{specify_reindention()}}.}
+conveniently constructed using \code{\link[styler:specify_reindention]{specify_reindention()}}.}
 
 \item{math_token_spacing}{A list of parameters that define spacing around
-math token, conveniently constructed using \code{\link[styler:math_token_spacing]{specify_math_token_spacing()}}.}
+math token, conveniently constructed using \code{\link[styler:specify_math_token_spacing]{specify_math_token_spacing()}}.}
 }
 \description{
 Style code according to the mlr style guide. For more details and docs, see
