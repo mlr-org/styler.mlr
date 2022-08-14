@@ -1,6 +1,6 @@
 Package: styler.mlr
 Title: Third-Party Style Guide for 'mlr'
-Version: 0.0.4.9000
+Version: 0.1.0
 Authors@R:
     person("Lorenz", "Walthert", , "lorenz.walthert@icloud.com", role = c("aut", "cre"))
 Description: Styles code according to the 'mlr style guide' using
