@@ -1,5 +1,5 @@
 Package: styler.mlr
-Title: Third-Party Style Guide For 'mlr'
+Title: Third-Party Style Guide for 'mlr'
 Version: 0.0.4.9000
 Authors@R:
     person("Lorenz", "Walthert", , "lorenz.walthert@icloud.com", role = c("aut", "cre"))
