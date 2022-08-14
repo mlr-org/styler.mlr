@@ -8,11 +8,8 @@ Description: styles code according to the 'mlr style guide' using
 License: MIT + file LICENSE
 URL: https://github.com/mlr-org/styler.mlr
 Imports:
-    magrittr,
-    precommit (>= 0.1.3),
     purrr,
     styler (>= 1.4.1.9003),
-    tibble
 Suggests:
     fs,
     knitr,
