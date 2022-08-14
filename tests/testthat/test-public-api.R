@@ -25,3 +25,22 @@ test_that("general", {
   style_pkg(dir)
   expect_equal(readLines(file), "a %>% c()")
 })
+
+test_that("rowwise tables do not get styled", {
+
+  withr::local_options(styler.quiet = TRUE, usethis.quiet = TRUE)
+  expect_equal(
+    style_text(
+      'rowwise_table(
+      ~type,     ~package,           ~task,           ~learner,         ~prediction,         ~measure,
+      "regr",    "mlr3spatiotempcv", "TaskRegrST",    "LearnerRegr",    "PredictionRegr",    "MeasureRegr",
+      "classif", "mlr3spatiotempcv", "TaskClassifST", "LearnerClassif", "PredictionClassif", "MeasureClassif"
+)') %>%
+      as.character(),
+    c("rowwise_table(",
+      "  ~type,     ~package,           ~task,           ~learner,         ~prediction,         ~measure,",
+      "  \"regr\",    \"mlr3spatiotempcv\", \"TaskRegrST\",    \"LearnerRegr\",    \"PredictionRegr\",    \"MeasureRegr\",",
+      "  \"classif\", \"mlr3spatiotempcv\", \"TaskClassifST\", \"LearnerClassif\", \"PredictionClassif\", \"MeasureClassif\"",
+      ")") %>%
+      as.character())
+})
