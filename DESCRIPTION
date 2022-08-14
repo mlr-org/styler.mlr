@@ -1,9 +1,9 @@
 Package: styler.mlr
-Title: Third-party Style Guide For 'mlr'
+Title: Third-Party Style Guide For 'mlr'
 Version: 0.0.4.9000
 Authors@R:
     person("Lorenz", "Walthert", , "lorenz.walthert@icloud.com", role = c("aut", "cre"))
-Description: styles code according to the 'mlr style guide' using
+Description: Styles code according to the 'mlr style guide' using
     'styler'.
 License: MIT + file LICENSE
 URL: https://github.com/mlr-org/styler.mlr
