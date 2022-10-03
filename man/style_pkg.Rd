@@ -20,10 +20,11 @@ style_pkg(
 \arguments{
 \item{pkg}{Path to a (subdirectory of an) R package.}
 
-\item{...}{Arguments passed on to the \code{style} function.}
+\item{...}{Arguments passed on to the \code{style} function,
+see \code{\link[styler:tidyverse_style]{tidyverse_style()}} for the default argument.}
 
 \item{style}{A function that creates a style guide to use, by default
-\code{\link[styler:tidyverse_style]{tidyverse_style()}} (without the parentheses). Not used
+\code{\link[styler]{tidyverse_style}}. Not used
 further except to construct the argument \code{transformers}. See
 \code{\link[styler:style_guides]{style_guides()}} for details.}
 
