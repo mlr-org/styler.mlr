@@ -191,7 +191,7 @@ mlr_style = function(scope = "tokens",
     )
   )
 
-  if (getRversion() < 3.6) {
+  if (getRversion() < "3.6") {
     transformers_drop$token$force_assignment_op = NULL
   }
 
