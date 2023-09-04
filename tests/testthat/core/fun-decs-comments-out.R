@@ -1,4 +1,3 @@
-
 f = function(a,
   b,
   c) { # #nolint
