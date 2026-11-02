@@ -22,6 +22,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{styler}{\code{\link[styler]{cache_activate}}, \code{\link[styler]{cache_clear}}, \code{\link[styler:cache_activate]{cache_deactivate}}, \code{\link[styler]{cache_info}}, \code{\link[styler]{create_style_guide}}, \code{\link[styler]{default_style_guide_attributes}}, \code{\link[styler:math_token_spacing]{specify_math_token_spacing}}, \code{\link[styler:reindention]{specify_reindention}}, \code{\link[styler]{specify_transformers_drop}}, \code{\link[styler:math_token_spacing]{tidyverse_math_token_spacing}}, \code{\link[styler:reindention]{tidyverse_reindention}}, \code{\link[styler]{tidyverse_style}}}
+  \item{styler}{\code{\link[styler:cache_activate]{cache_activate()}}, \code{\link[styler:cache_clear]{cache_clear()}}, \code{\link[styler:cache_deactivate]{cache_deactivate()}}, \code{\link[styler:cache_info]{cache_info()}}, \code{\link[styler:create_style_guide]{create_style_guide()}}, \code{\link[styler:default_style_guide_attributes]{default_style_guide_attributes()}}, \code{\link[styler:specify_math_token_spacing]{specify_math_token_spacing()}}, \code{\link[styler:specify_reindention]{specify_reindention()}}, \code{\link[styler:specify_transformers_drop]{specify_transformers_drop()}}, \code{\link[styler:tidyverse_math_token_spacing]{tidyverse_math_token_spacing()}}, \code{\link[styler:tidyverse_reindention]{tidyverse_reindention()}}, \code{\link[styler:tidyverse_style]{tidyverse_style()}}}
 }}
 
